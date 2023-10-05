@@ -11,9 +11,6 @@ class Roll:
 class Frame(ABC):
     rolls: list[Roll] = field(default_factory=list)
 
-    def open_frame(self) -> int:
-        return sum(roll.pins for roll in self.rolls)
-
     def is_strike(self) -> bool:
         return self.rolls[0].pins == 10
 
